@@ -22,14 +22,14 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: {
-    default: `${personInfo.name}`,
-    template: `${personInfo.name} - %s`,
+    default: `${personInfo.nickname}`,
+    template: `${personInfo.nickname} - %s`,
   },
   description: `${personInfo.description}`,
   keywords: ["88JC", "Tech Enthusiast", "KYDO", "Portofolio", "Personal Website"],
-  authors: [{ name: personInfo.name }],
-  creator: personInfo.name,
-  publisher: personInfo.name,
+  authors: [{ name: personInfo.nickname }],
+  creator: personInfo.nickname,
+  publisher: personInfo.nickname,
   robots: {
     index: true,
     follow: true,
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${personInfo.name}`,
+    title: `${personInfo.nickname}`,
     description: `${personInfo.description}`,
     url: `https://${personInfo.domain}`,
-    siteName: `${personInfo.name}'s Personal Website.`,
+    siteName: `${personInfo.nickname}'s Personal Website.`,
     locale: "en_US",
     type: "website",
     images: [
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
         url: '/img/kydo.png',
         width: 1200,
         height: 630,
-        alt: `${personInfo.name}`,
+        alt: `${personInfo.nickname}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${personInfo.name}`,
+    title: `${personInfo.nickname}`,
     description: `${personInfo.description}`,
     creator: `@${personInfo.username}`,
     images: ['/img/kydo.png'],
