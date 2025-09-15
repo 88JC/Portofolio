@@ -4,6 +4,6 @@ export const config = {
   },
   discord: {
     userId: "320607798234710018",
-    username: "jexq",
+    username: "ky.do",
   },
 }; 

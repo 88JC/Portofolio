@@ -1,6 +1,6 @@
 export const personInfo = {
   name: "Jecky Chan",
-  username: "jexq",
+  username: "ky.do",
   nickname: "KYDO",
   profession: "Tech Enthusiast",
   region: "Semarang, Indonesia",
