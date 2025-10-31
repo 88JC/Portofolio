@@ -75,7 +75,7 @@ export default function SocialsPage() {
             <ContactItem 
               href={personInfo.socialLinks.discord}
               icon={FaDiscord}
-              text="@jexq"
+              text="@ky.do"
               description="Chat with me on Discord"
               bgColor="bg-indigo-500"
               hoverColor="hover:bg-indigo-600"
@@ -83,7 +83,7 @@ export default function SocialsPage() {
             <ContactItem 
               href={personInfo.socialLinks.mail}
               icon={FaEnvelope}
-              text="chan@jecky.id"
+              text="hi@wokydo.me"
               description="Send me an email"
               bgColor="bg-emerald-500"
               hoverColor="hover:bg-emerald-600"
@@ -99,7 +99,7 @@ export default function SocialsPage() {
             <ContactItem 
               href={personInfo.socialLinks.twitter}
               icon={FaTwitter}
-              text="@METALHEAD666"
+              text="@kydofate"
               description="Follow me on X (Twitter)"
               bgColor="bg-blue-500"
               hoverColor="hover:bg-blue-600"

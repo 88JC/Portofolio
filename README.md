@@ -14,7 +14,7 @@ A modern portfolio website showcasing your profile, tech stack, GitHub projects,
 
 ## Demo
 
-> [Live Demo (Website)](https://jecky.id)
+> [Live Demo (Website)](https://wokydo.me)
 
 ---
 
