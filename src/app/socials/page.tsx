@@ -81,6 +81,14 @@ export default function SocialsPage() {
               hoverColor="hover:bg-indigo-600"
             />
             <ContactItem 
+              href={personInfo.socialLinks.server}
+              icon={FaDiscord}
+              text="Discord Server"
+              description="Join my Discord server"
+              bgColor="bg-purple-600"
+              hoverColor="hover:bg-purple-700"
+            />
+            <ContactItem 
               href={personInfo.socialLinks.mail}
               icon={FaEnvelope}
               text="hi@wokydo.me"

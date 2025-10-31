@@ -1,5 +1,5 @@
 export const personInfo = {
-  name: "Jecky Chan",
+  name: "Kydo",
   username: "ky.do",
   nickname: "KYDO",
   profession: "Tech Enthusiast",
@@ -8,7 +8,7 @@ export const personInfo = {
   avatar: "/img/kydo.jpeg",
   banner: "/img/banner.jpg",
   description: "Hi! Welcome to my personal website.",
-  domain: "jecky.id",
+  domain: "wokydo.me",
 };
 
 export const CONFIG = {
