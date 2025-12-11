@@ -95,7 +95,7 @@ export async function GET() {
       status_text: 'offline',
       discord_avatar: `https://cdn.discordapp.com/embed/avatars/0.png`,
       avatar_decoration: null,
-      discord_username: 'jexq',
+      discord_username: 'ky.do',
       custom_status: null,
       current_application: null,
     };
