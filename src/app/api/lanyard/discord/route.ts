@@ -73,11 +73,15 @@ export async function GET() {
       statusForIcon = 'streaming';
     }
 
+    const avatarHash = data.data.discord_user.avatar;
+
     const status: DiscordStatusData = {
       discord_status: getDiscordStatus(data.data.discord_status),
       status_color: getStatusColor(statusForIcon),
       status_text: getStatusText(statusForIcon),
-      discord_avatar: `https://cdn.discordapp.com/avatars/${DiscordIds}/${data.data.discord_user.avatar}.png?size=512`,
+      discord_avatar: avatarHash
+        ? `https://cdn.discordapp.com/avatars/${DiscordIds}/${avatarHash}.png?size=512`
+        : `https://cdn.discordapp.com/embed/avatars/0.png`,
       avatar_decoration: data.data.discord_user.avatar_decoration_data ? 
         `https://cdn.discordapp.com/avatar-decoration-presets/${data.data.discord_user.avatar_decoration_data.asset}.png` : null,
       discord_username: data.data.discord_user.global_name || data.data.discord_user.username,
