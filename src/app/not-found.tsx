@@ -5,7 +5,7 @@ import { FaHome, FaArrowLeft } from 'react-icons/fa';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#171717] py-6 md:py-10">
+    <div className="min-h-screen flex items-center justify-center py-6 md:py-10">
       <div className="relative max-w-4xl mx-auto px-4">
         <div className="w-full p-6 sm:p-8 md:p-12 relative text-center">
           <div className="mb-8">
