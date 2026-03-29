@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import SoundEffect from "../components/SoundEffect";
 import Navbar from "../components/Navbar";
+import PageTransition from "../components/PageTransition";
 import { personInfo } from "@/lib/data/profile";
 
 const geistSans = Geist({
@@ -115,7 +116,7 @@ export default function RootLayout({
       >
         <SoundEffect />
         <Navbar position="footer" />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Analytics />
 
       </body>
