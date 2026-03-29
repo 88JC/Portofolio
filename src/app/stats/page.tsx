@@ -19,6 +19,7 @@ export default function StatsPage() {
   const [showFollowers, setShowFollowers] = useState(false);
   const [showFollowing, setShowFollowing] = useState(false);
   const [showStarred, setShowStarred] = useState(false);
+  const [showRepos, setShowRepos] = useState(false);
   const [followers, setFollowers] = useState<GitHubUser[]>([]);
   const [following, setFollowing] = useState<GitHubUser[]>([]);
   const [starredRepos, setStarredRepos] = useState<GitHubStarredRepo[]>([]);
@@ -113,10 +114,7 @@ export default function StatsPage() {
   };
 
   const handleReposClick = () => {
-    const reposSection = document.getElementById('recent-repos');
-    if (reposSection) {
-      reposSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    setShowRepos(true);
   };
 
   if (error) {
@@ -526,6 +524,87 @@ export default function StatsPage() {
                   </div>
                 ) : (
                   <p className="text-white/70 text-center py-8">No starred repositories</p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showRepos && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-black/90 border border-white/20 rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">Repositories ({stats.public_repos})</h3>
+                <button
+                  onClick={() => setShowRepos(false)}
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div className="overflow-y-auto max-h-[60vh] popup-scrollbar">
+                {repos.length > 0 ? (
+                  <div className="space-y-3 pr-2">
+                    {repos.map((repo) => (
+                      <a
+                        key={repo.id}
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block p-4 rounded-lg hover:bg-white/10 transition-all duration-200 border border-white/10 hover:border-white/20 group"
+                      >
+                        <div className="flex items-start justify-between gap-3 mb-2">
+                          <h4 className="text-white font-semibold group-hover:text-purple-300 transition-colors">
+                            {repo.name}
+                          </h4>
+                          {repo.fork && (
+                            <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full flex-shrink-0">
+                              Fork
+                            </span>
+                          )}
+                        </div>
+                        {repo.description && (
+                          <p className="text-white/70 text-sm mb-2 line-clamp-2 group-hover:text-white/80 transition-colors">
+                            {repo.description}
+                          </p>
+                        )}
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-white/60">
+                          {repo.language && (
+                            <div className="flex items-center gap-1">
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: getLanguageColor(repo.language) }}
+                              ></div>
+                              <span>{repo.language}</span>
+                            </div>
+                          )}
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="#facc15" strokeWidth="2" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                            <span>{repo.stargazers_count}</span>
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="#2563eb" strokeWidth="2" viewBox="0 0 24 24">
+                              <circle cx="6" cy="6" r="2" />
+                              <circle cx="18" cy="6" r="2" />
+                              <circle cx="12" cy="18" r="2" />
+                              <path d="M6 8v2a4 4 0 004 4h0a4 4 0 004-4V8" />
+                            </svg>
+                            <span>{repo.forks_count}</span>
+                          </span>
+                          <span className="flex items-center gap-1 ml-auto">
+                            <FaCalendarAlt className="text-xs" />
+                            <span>{formatDate(repo.updated_at)}</span>
+                          </span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-white/70 text-center py-8">No repositories found</p>
                 )}
               </div>
             </div>
