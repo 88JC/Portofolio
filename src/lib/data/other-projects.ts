@@ -10,4 +10,13 @@ export const otherProjects = [
     updated_at: "2025-07-13T10:30:00Z",
     cover: "/img/project/soulvibe.png"
   },
+  {
+    id: 1002,
+    name: "KMail",
+    description: "KMail is a self-hosted temporary email inbox for receiving verification emails, auto-extracting OTP codes, and managing messages in one dashboard.",
+    html_url: `https://github.com/88JC`,
+    homepage: "https://kmail.wokydo.me",
+    updated_at: "2026-04-28T10:30:00Z",
+    cover: "/img/project/kmail.png"
+  },
 ]; 
